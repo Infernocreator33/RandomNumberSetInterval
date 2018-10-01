@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Number Between 0 and 5</title>
+</head>
+<body>
+    <input type="button" id="stopClock" value="Stop Clock">
+    <div id="clock"></div>
+    <script>
+        //will run myFunction every 1000 milliseconds
+        myTimer = setInterval(myFunction, 1000);
+
+        function myFunction() 
+        {
+            var randNum;
+            randNum = Math.ceil(Math.random() * 5);
+            //alert(randNum);
+            document.getElementById("clock").innerHTML = "The random number is " + randNum;
+        }
+        document.getElementById("stopClock").addEventListener("click", function(){
+            clearInterval(myTimer);
+            document.getElementById("clock").innerHTML = "Clock Stopped";
+        });
+        </script>
+</body>
+</html>
